@@ -12,7 +12,7 @@ function App() {
   getData(location)
   
   return (
-    <div className="App bg-[#0B131E] bg-cover bg-no-repeat bg-[url('./assets/day_bg.png')]">
+    <div className={`App bg-[#0B131E] bg-cover bg-no-repeat ${ isDay ? "bg-[url('./day_bg.png')]" : "bg-[url('./night_bg.png')]" }  `}>
       <div className="weather-app">
         <SearchBar setLocation={setLocation} location={location}/>
         {isPending && <div className='text-center text-2xl font-semibold m-[40px] text-white'>Getting Data...</div>}

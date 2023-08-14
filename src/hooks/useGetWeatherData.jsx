@@ -7,7 +7,9 @@ export default function useGetWeatherData() {
     const [ hourlyForcastData, setHourlyForcastData ] = useState(null)
     const [ dayForecast, setDayForecast ] = useState(null)
     const [ error, setError ] = useState(null)
+    const [ isDay, setIsDay ] = useState(1)
 
+    
     const getData = (location) => {
         useEffect(() => {
             const callApi = async () => {
@@ -23,6 +25,7 @@ export default function useGetWeatherData() {
                     setIsPending(false)
                     return
                 }else {
+                    setIsDay(json.current.is_day)
                     let currentData = {
                         country: json.location.country,
                         date: json.current.last_updated,
@@ -67,5 +70,5 @@ export default function useGetWeatherData() {
         }, [location])
     }
 //    console.log(hourlyForcastData)
-   return { getData, isPending, currentData, hourlyForcastData, dayForecast, error }
+   return { getData, isPending, currentData, hourlyForcastData, dayForecast, error, isDay }
 }

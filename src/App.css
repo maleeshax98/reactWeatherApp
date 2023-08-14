@@ -4,3 +4,12 @@
   padding: 2rem;
 }
 
+.fSingleCard{
+  min-width: 170px;
+  max-width: 170px;
+}
+
+.hourlyForecast{
+  min-width: 127px;
+  max-width: 127px;
+}

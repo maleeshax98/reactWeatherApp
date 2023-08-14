@@ -8,7 +8,7 @@ import useGetWeatherData from './hooks/useGetWeatherData'
 function App() {
 
   const [ location, setLocation ] = useState("Colombo")
-  const { getData, isPending, currentData, hourlyForcastData, dayForecast, error } = useGetWeatherData()
+  const { getData, isPending, currentData, hourlyForcastData, dayForecast, error, isDay } = useGetWeatherData()
   getData(location)
   
   return (
